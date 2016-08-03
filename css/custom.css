@@ -49,6 +49,9 @@ video#bgvid {
   max-width:400px;
   height: auto;
 }
+#navbar {
+  transition: background-color .2s;
+}
 
 /*Colors/theme (look and feel of the website)*/
 .btn-primary{

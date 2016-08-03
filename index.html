@@ -163,6 +163,7 @@
     <script src="./js/jquery.smooth-scroll.js"></script>
     <script src="./js/parallax.min.js"></script>
     <script>
+    var top = true;
       $(document).ready(function(){
         $(".smooth").smoothScroll({
           offset:-54,
@@ -173,6 +174,15 @@
         $('#spilled_coffee').parallax({imageSrc: './media/spilled_coffee.jpg',bleed:10,naturalWidth:4288,naturalHeight:2848});
         $('#coffee-table').parallax({imageSrc: './media/coffee-table.jpg',bleed:10,naturalWidth:1280,naturalHeight:956});
         $('#atlas-coffee').parallax({imageSrc: './media/atlas-coffee.jpg',bleed:10,naturalWidth:1080,naturalHeight:1080});
+        $(window).scroll(function(){
+          if(top && document.body.scrollTop < 10){
+            top = true;
+            $('#navbar').addClass('bg-transparent').removeClass('bg-inverse');
+          } else {
+            top = false;
+            $('#navbar').addClass('bg-inverse').removeClass('bg-transparent');
+          }
+        })
       });
     </script>
   </body>
