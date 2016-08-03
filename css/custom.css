@@ -1,3 +1,4 @@
+/*Quick Reset*/
 html, body {
     min-height: 100%;
     height: 100%;
@@ -6,21 +7,22 @@ html, body {
   height:100%;
 }
 
+/*Text properties*/
 body {
   font-family: 'Source Sans Pro', sans-serif;
-}
-.btn-primary{
-  background-color: #ae8648;
-  border-color: #ad8448;
-  transition: all .2s;
-}
-.btn-primary:hover{
-  background-color: #6F4E37;
-  border-color: #6F4E37;
 }
 .bold {
   font-weight:700;
 }
+.text-white {
+  color:white;
+}
+.header {
+  font-weight:300;
+  font-size:50px;
+}
+
+/*Attributes significant to individual elements*/
 video#bgvid {
   position: fixed;
   top: 50%;
@@ -42,8 +44,21 @@ video#bgvid {
   align-items: center;
   height: inherit;
 }
-.text-white {
-  color:white;
+#atlasLogo {
+  width: 100%;
+  max-width:400px;
+  height: auto;
+}
+
+/*Colors/theme (look and feel of the website)*/
+.btn-primary{
+  background-color: #ae8648;
+  border-color: #ad8448;
+  transition: all .2s;
+}
+.btn-primary:hover{
+  background-color: #6F4E37;
+  border-color: #6F4E37;
 }
 .bg-transparent {
   background-color: transparent;
@@ -65,14 +80,12 @@ hr {
   margin-top:1.2em;
   margin-bottom:1.5em;
 }
-.header {
-  font-weight:300;
-  font-size:50px;
-}
+/*Parallax window attributes*/
 .parallax-window {
   height: 400px;
 }
 
+/*Our Team 'Person'*/
 .person {
   text-align: center;
   margin-bottom: 40px;
@@ -101,6 +114,9 @@ hr {
   margin-bottom: 30px;
   letter-spacing: 2px;
 }
+
+/*UTILITIES*/
+/*Centering Utility*/
 .m-x-auto {
   display: block;
 }
