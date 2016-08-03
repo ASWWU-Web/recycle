@@ -18,16 +18,16 @@
       <a class="navbar-brand bold" href="#">The Atlas</a>
       <ul class="nav navbar-nav pull-xs-right">
         <li class="nav-item">
-          <a class="nav-link" href="#"> About Us</a>
+          <a class="nav-link smooth" href="#aboutUs"> About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Our Team</a>
+          <a class="nav-link smooth" href="#ourTeam">Our Team</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">The Roastery</a>
+          <a class="nav-link smooth" href="#theRoastery">The Roastery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Social</a>
+          <a class="nav-link smooth" href="#social">Social</a>
         </li>
       </ul>
     </nav>
@@ -46,7 +46,7 @@
     </div>
 
     <!-- About US -->
-    <section class="bg-coffee">
+    <section id="aboutUs" class="bg-coffee">
       <div class="container text-white">
         <!-- Example row of columns -->
         <h1 class="text-xs-center header">About Us</h1>
@@ -79,7 +79,7 @@
     <div id="late" class="parallax-window" data-parallax="scroll" data-image-src="./media/late.jpg"></div>
 
     <!--OUR TEAM-->
-    <section>
+    <section id="ourTeam">
       <div class="container">
          <h1 class="text-xs-center header">Our Team</h1>
          <hr />
@@ -119,7 +119,8 @@
 
     <div id="spilled_coffee" class="parallax-window"></div>
 
-    <section class="bg-coffee">
+    <!-- The Roastery -->
+    <section id="theRoastery" class="bg-coffee">
       <div class="container text-white">
         <h1 class="text-xs-center header">The Roastery</h1>
         <hr />
@@ -134,7 +135,7 @@
     <div id="coffee-table" class="parallax-window"></div>
 
     <!--SOCIAL-->
-    <section>
+    <section id="social">
       <div class="container">
          <h1 class="text-xs-center header">Social</h1>
          <hr />
@@ -159,12 +160,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+    <script src="./js/jquery.smooth-scroll.js"></script>
     <script src="./js/parallax.min.js"></script>
     <script>
-      $('#late').parallax({imageSrc: './media/late.jpg',bleed:10,naturalWidth:2000,naturalHeight:1333});
-      $('#spilled_coffee').parallax({imageSrc: './media/spilled_coffee.jpg',bleed:10,naturalWidth:4288,naturalHeight:2848});
-      $('#coffee-table').parallax({imageSrc: './media/coffee-table.jpg',bleed:10,naturalWidth:1280,naturalHeight:956});
-      $('#atlas-coffee').parallax({imageSrc: './media/atlas-coffee.jpg',bleed:10,naturalWidth:1080,naturalHeight:1080});
+      $(document).ready(function(){
+        $(".smooth").smoothScroll({
+          offset:-54,
+          speed:"auto",
+          autoCoefficient:2
+        });
+        $('#late').parallax({imageSrc: './media/late.jpg',bleed:10,naturalWidth:2000,naturalHeight:1333});
+        $('#spilled_coffee').parallax({imageSrc: './media/spilled_coffee.jpg',bleed:10,naturalWidth:4288,naturalHeight:2848});
+        $('#coffee-table').parallax({imageSrc: './media/coffee-table.jpg',bleed:10,naturalWidth:1280,naturalHeight:956});
+        $('#atlas-coffee').parallax({imageSrc: './media/atlas-coffee.jpg',bleed:10,naturalWidth:1080,naturalHeight:1080});
+      });
     </script>
   </body>
 </html>
