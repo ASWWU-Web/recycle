@@ -119,7 +119,13 @@ hr {
 }
 
 /*UTILITIES*/
+
 /*Centering Utility*/
 .m-x-auto {
   display: block;
+}
+/*Iframe container*/
+.iframe-container {
+    position: relative;
+    overflow-x: scroll;
 }
