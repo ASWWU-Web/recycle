@@ -65,6 +65,7 @@ video#bgvid {
 }
 .bg-transparent {
   background-color: transparent;
+  /*text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.57);*/
 }
 .bg-coffee {
   background-image:url(../media/coffee_beans.jpg);
@@ -83,6 +84,7 @@ hr {
   margin-top:1.2em;
   margin-bottom:1.5em;
 }
+
 /*Parallax window attributes*/
 .parallax-window {
   height: 400px;
