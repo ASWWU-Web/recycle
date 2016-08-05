@@ -124,8 +124,3 @@ hr {
 .m-x-auto {
   display: block;
 }
-/*Iframe container*/
-.iframe-container {
-    position: relative;
-    overflow-x: scroll;
-}
