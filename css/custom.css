@@ -52,6 +52,13 @@ video#bgvid {
 #navbar {
   transition: background-color .2s;
 }
+#map{
+  height:100%;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 200;
+}
 
 /*Colors/theme (look and feel of the website)*/
 .btn-primary{
@@ -125,4 +132,12 @@ hr {
 /*Centering Utility*/
 .m-x-auto {
   display: block;
+}
+
+/*flexbox stretch*/
+.full_height_parent{
+  display: flex;
+}
+.full_height_child {
+  align-items: stretch;
 }

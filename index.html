@@ -51,7 +51,7 @@
         <!-- Example row of columns -->
         <h1 class="text-xs-center header">About Us</h1>
         <hr>
-        <div class="row flex-items-xs-middle">
+        <div class="row flex-items-xs-middle full_height_parent">
           <div class="col-md-6">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue sed lacus vitae dignissim. Maecenas lobortis diam ac metus tempus, quis tempor metus pulvinar. In semper augue nec condimentum laoreet.
@@ -70,9 +70,9 @@
               Sat: Closed
             </p>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 full_height">
             <!-- TODO: Refine map view. -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2777824.4265743606!2d-122.1743317580707!3d47.163354372145676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54a269f9a1d49d7b%3A0x5cfb56df32d2d601!2sThe+Atlas!5e0!3m2!1sen!2sus!4v1470159976987" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen></iframe>
+            <div id='map' class='full_height_child'></div>
          </div>
       </div> <!-- /container -->
     </section>
@@ -92,7 +92,7 @@
 								<h3 class="name">Jonathan Fitch</h3>
 								<div class="position">Atlas Manager</div>
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
-                <a href="https://aswwu.com/#/profile/jonathan.fitch">Mask Profile</a>
+                <a href="https://aswwu.com/#/profile/jonathan.fitch" target="_blank">Mask Profile</a>
            </div>
 
            <div class="person col-md-4">
@@ -102,7 +102,7 @@
 								<h3 class="name">Austin Mock</h3>
 								<div class="position">Sub Manager?</div>
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
-                <a href="https://aswwu.com/#/profile/austin.mock">Mask Profile</a>
+                <a href="https://aswwu.com/#/profile/austin.mock" target="_blank">Mask Profile</a>
            </div>
 
            <div class="person col-md-4">
@@ -112,7 +112,7 @@
 								<h3 class="name">Somebody Else</h3>
 								<div class="position">Barista</div>
 								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
-                <a href="#">Mask Profile</a>
+                <a href="#" target="_blank">Mask Profile</a>
            </div>
          </div>
       </div>
@@ -146,7 +146,7 @@
            <div class="col-xs-12 text-xs-center">
              <!-- TODO: Find a better way to get the instagram feed. -->
              <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/ab67042a8fab55eba6807cdfae899801.html" id="lightwidget_ab67042a8f" name="lightwidget_ab67042a8f"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
-             <a href="https://www.instagram.com/the_atlas/" class="btn btn-primary">Open in Instagram</a>
+             <a href="https://www.instagram.com/the_atlas/" target="_blank" class="btn btn-primary">Open in Instagram</a>
            </div>
          </div>
       </div>
@@ -156,7 +156,7 @@
 
     <nav class="navbar  navbar-dark bg-inverse">
       <div class="pull-xs-left text-white small">
-        Coded with <font color="red">&hearts;</font> by the <a href="https://aswwu.com">ASWWU</a> web team.
+        Coded with <font color="red">&hearts;</font> by the <a href="https://aswwu.com" target="_blank">ASWWU</a> web team.
       </div>
       <div class="pull-xs-right small">
          <a href="#top" class="text-white smooth">Back to Top</a>
@@ -192,6 +192,55 @@
         }
       })
     });
+    </script>
+    <script>
+      function initMap() {
+        var atlas = {lat: 46.049530, lng: -118.388233};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: atlas,
+          disableDefaultUI: true,
+          scrollwheel:false,
+          styles: [
+            {
+              featureType: 'all',
+              stylers: [
+                {hue: "#ae8648"},
+                {saturation: 70},
+                {lightness: 0},
+                {gamma: 1}
+              ]
+            },{
+              featureType: 'poi',
+              elementType: 'labels',
+              stylers: [
+                { visibility: 'off' }
+              ]
+            }
+          ]
+        });
+
+        var image = {
+          url: './media/coffeeMarker.png',
+          anchor: new google.maps.Point(20,40),
+          origin: new google.maps.Point(0, 0),
+          size: new google.maps.Size(128, 128),
+          scaledSize: new google.maps.Size(40,40)
+        };
+        var infowindow = new google.maps.InfoWindow({
+          content: "<a href='https://www.google.com/maps/dir//46.049527,-118.3882132/' target='_blank'>Get Directions</a>"
+        });
+        var marker = new google.maps.Marker({
+          position: atlas,
+          map: map,
+          icon: image
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBahOC0C4N-7MOD_Qn8446o5QiXX6AmWhc&callback=initMap">
     </script>
   </body>
 </html>
