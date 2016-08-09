@@ -13,8 +13,23 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.gif" type="image/x-icon">
+    <style>
+    @media screen and (max-device-width: 800px) {
+        body {
+             background-image: url(./media/videoScreenShot.jpg);
+             background-color: black;
+             background-repeat: no-repeat;
+             background-position: center;
+             background-size: cover;
+        }
+        #bgvid {
+            display: none;
+        }
+    }
+    </style>
   </head>
   <body>
+    <!-- TODO: Mobile nav. -->
     <nav id="navbar" class="navbar navbar-static-top navbar-dark bg-transparent navbar-fixed-top">
       <a class="navbar-brand bold smooth" href="#top">The Atlas</a>
       <ul class="nav navbar-nav pull-xs-right">
@@ -72,13 +87,14 @@
             </p>
           </div>
           <div class="col-md-6 full_height">
-            <!-- TODO: Refine map view. -->
             <div id='map' class='full_height_child'></div>
          </div>
       </div> <!-- /container -->
     </section>
 
-    <div id="late" class="parallax-window" data-parallax="scroll" data-image-src="./media/late.jpg"></div>
+    <div id="late" class="parallax-window" data-image-src="./media/late.jpg"><div class="bg-parallax" style="transform:translateY(-3px);">
+
+    </div></div>
 
     <!--OUR TEAM-->
     <section id="ourTeam">
@@ -169,78 +185,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
     <script src="./js/jquery.smooth-scroll.js"></script>
     <script src="./js/parallax.min.js"></script>
-    <script>
-    //Startup script.
-    var top = true;
-    $(document).ready(function(){
-      $(".smooth").smoothScroll({
-        offset:-54,
-        speed:"auto",
-        autoCoefficient:2
-      });
-      //TODO: Design your own (faster) parallax.
-      $('#late').parallax({imageSrc: './media/late.jpg',bleed:10,naturalWidth:2000,naturalHeight:1333});
-      $('#spilled_coffee').parallax({imageSrc: './media/spilled_coffee.jpg',bleed:10,naturalWidth:4288,naturalHeight:2848});
-      $('#coffee-table').parallax({imageSrc: './media/coffee-table.jpg',bleed:10,naturalWidth:1280,naturalHeight:956});
-      $('#atlas-coffee').parallax({imageSrc: './media/atlas-coffee.jpg',bleed:10,naturalWidth:1080,naturalHeight:1080});
-      $(window).scroll(function(){
-        if(top && document.body.scrollTop < 10){
-          top = true;
-          $('#navbar').addClass('bg-transparent').removeClass('bg-inverse');
-        } else {
-          top = false;
-          $('#navbar').addClass('bg-inverse').removeClass('bg-transparent');
-        }
-      })
-    });
-    </script>
-    <script>
-      function initMap() {
-        var atlas = {lat: 46.049530, lng: -118.388233};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
-          center: atlas,
-          disableDefaultUI: true,
-          scrollwheel:false,
-          styles: [
-            {
-              featureType: 'all',
-              stylers: [
-                {hue: "#ae8648"},
-                {saturation: 70},
-                {lightness: 0},
-                {gamma: 1}
-              ]
-            },{
-              featureType: 'poi',
-              elementType: 'labels',
-              stylers: [
-                { visibility: 'off' }
-              ]
-            }
-          ]
-        });
-
-        var image = {
-          url: './media/coffeeMarker.png',
-          anchor: new google.maps.Point(20,40),
-          origin: new google.maps.Point(0, 0),
-          size: new google.maps.Size(128, 128),
-          scaledSize: new google.maps.Size(40,40)
-        };
-        var infowindow = new google.maps.InfoWindow({
-          content: "<a href='https://www.google.com/maps/dir//46.049527,-118.3882132/' target='_blank'>Get Directions</a>"
-        });
-        var marker = new google.maps.Marker({
-          position: atlas,
-          map: map,
-          icon: image
-        });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
-      }
-    </script>
+    <script src="./js/custom.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBahOC0C4N-7MOD_Qn8446o5QiXX6AmWhc&callback=initMap">
     </script>
   </body>

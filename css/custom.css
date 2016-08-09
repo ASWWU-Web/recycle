@@ -10,6 +10,7 @@ html, body {
 /*Text properties*/
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: transparent;
 }
 .bold {
   font-weight:700;
@@ -38,6 +39,7 @@ video#bgvid {
   transform: translateX(-50%) translateY(-50%);
   background-color:black;
 }
+
 #title {
   display: flex;
   justify-content: center;
@@ -58,6 +60,9 @@ video#bgvid {
   border-radius: 5px;
   overflow: hidden;
   z-index: 200;
+}
+#top {
+  margin-bottom: 0;
 }
 
 /*Colors/theme (look and feel of the website)*/
@@ -95,6 +100,14 @@ hr {
 /*Parallax window attributes*/
 .parallax-window {
   height: 400px;
+  overflow: hidden;
+}
+.bg-parallax {
+  background-image: url('../media/late.jpg');
+  background-position: center;
+  background-size: cover;
+  height:130%;
+
 }
 
 /*Our Team 'Person'*/
