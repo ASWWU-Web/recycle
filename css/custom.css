@@ -60,6 +60,7 @@ video#bgvid {
   border-radius: 5px;
   overflow: hidden;
   z-index: 200;
+  min-height: 300px;
 }
 #top {
   margin-bottom: 0;
@@ -103,11 +104,9 @@ hr {
   overflow: hidden;
 }
 .bg-parallax {
-  background-image: url('../media/late.jpg');
   background-position: center;
   background-size: cover;
-  height:130%;
-
+  height:700px;
 }
 
 /*Our Team 'Person'*/

@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.gif" type="image/x-icon">
     <style>
-    @media screen and (max-device-width: 800px) {
+    @media screen and (max-width: 767px) {
         body {
              background-image: url(./media/videoScreenShot.jpg);
              background-color: black;
@@ -25,11 +25,14 @@
         #bgvid {
             display: none;
         }
+        /*allow map to collapse properly on mobile.*/
+        .full_height_parent{
+          display: block;
+        }
     }
     </style>
   </head>
   <body>
-    <!-- TODO: Mobile nav. -->
     <nav id="navbar" class="navbar navbar-static-top navbar-dark bg-transparent navbar-fixed-top">
       <a class="navbar-brand bold smooth" href="#top">The Atlas</a>
       <button class="navbar-toggler hidden-sm-up pull-xs-right text-white" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,7 +101,6 @@
     </section>
 
     <div id="late" class="parallax-window" data-image-src="./media/late.jpg">
-      <div class="bg-parallax" style="transform:translateY(-3px);"></div>
     </div>
 
     <!--OUR TEAM-->
@@ -167,7 +169,9 @@
          <div class="row">
            <div class="col-xs-12 text-xs-center">
              <!-- TODO: Find a better way to get the instagram feed. -->
-             <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/ab67042a8fab55eba6807cdfae899801.html" id="lightwidget_ab67042a8f" name="lightwidget_ab67042a8f"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+             <p>
+               Instagram feed comming soon.
+             </p>
              <a href="https://www.instagram.com/the_atlas/" target="_blank" class="btn btn-primary">Open in Instagram</a>
            </div>
          </div>
