@@ -29,6 +29,10 @@
         .full_height_parent{
           display: block;
         }
+        /*Nicely disable the parallax */
+        .parallax-window {
+          background-attachment: local;
+        }
     }
     </style>
   </head>
@@ -178,7 +182,7 @@
       </div>
     </section>
 
-    <div id="atlas-coffee" class="parallax-window"></div>
+    <div id="atlas-coffee" class="parallax-window" style="background-position: 0 300px;"></div>
 
     <nav class="navbar  navbar-dark bg-inverse">
       <div class="pull-xs-left text-white small">

@@ -9,15 +9,10 @@ $(document).ready(function(){
     speed:"auto",
     autoCoefficient:2
   });
-  //TODO: Design your own (faster) parallax.
-  //$('#late').parallax({imageSrc: './media/late.jpg',bleed:10,naturalWidth:2000,naturalHeight:1333});
-  addParallax("late","./media/late.jpg");
-  addParallax("spilled_coffee","./media/spilled_coffee.jpg");
-  addParallax("coffee-table","./media/coffee-table.jpg");
-  addParallax("atlas-coffee","./media/atlas-coffee.jpg");
-  // $('#spilled_coffee').parallax({imageSrc: './media/spilled_coffee.jpg',bleed:10,naturalWidth:4288,naturalHeight:2848});
-  // $('#coffee-table').parallax({imageSrc: './media/coffee-table.jpg',bleed:10,naturalWidth:1280,naturalHeight:956});
-  // $('#atlas-coffee').parallax({imageSrc: './media/atlas-coffee.jpg',bleed:10,naturalWidth:1080,naturalHeight:1080});
+  addParallax("#late","./media/late.jpg");
+  addParallax("#spilled_coffee","./media/spilled_coffee.jpg");
+  addParallax("#coffee-table","./media/coffee-table.jpg");
+  addParallax("#atlas-coffee","./media/atlas-coffee.jpg");
   //Attach this function to scroll event.
   $(window).scroll(function() {
     if(top && document.body.scrollTop < 10){
@@ -27,7 +22,6 @@ $(document).ready(function(){
       top = false;
       $('#navbar').addClass('bg-inverse').removeClass('bg-transparent');
     }
-    updateParallax();
   });
   //In case the page doesn't load on the top.
   if(top && document.body.scrollTop < 10){
@@ -41,66 +35,7 @@ $(document).ready(function(){
 
 //PARALLAX STUFF
 function addParallax(id, imgUrl) {
-  var offset = $("#" + id).offset().top;
-  $("#" + id).append("<div id='sub-" + id + "' class='bg-parallax'></div>")
-  .children(".bg-parallax")
-  .css('background-image',"url(" + imgUrl + ")")
-  .css("transform","translatey(-300px)");
-
-  parallax.push({
-    "id":id,
-    "url":imgUrl,
-    //"height": height,
-    "offset":offset
-  });
-
-  // //IDEA: Instead of having static heights use the img height.
-  // $(id).append("<img class='bg-parallax' src="+ imgUrl +"></img>")
-  //   .children("img")
-  //   //.children(".bg-parallax")
-  //   //.css('background-image',"url(" + imgUrl + ")")
-  //   .css("transform","translatey(-120px)");
-  // //Get IMG height.
-  // var height = 0;
-  // var img = new Image();
-  // img.onload = function() {
-  //   height = this.height;
-  //   //push info to array
-  //   parallax.push({
-  //     "id":id,
-  //     "url":imgUrl,
-  //     "height": height,
-  //     "offset":offset
-  //   });
-  // }
-  // img.src = imgUrl;
-}
-function updateParallax(){
-
-  var scrollTop = document.body.scrollTop;
-  var winHeight = window.innerHeight;
-  // $.each(parallax, function(i,o){
-  //   //var move = scrollTop -
-  //   if(-120 < move && move < 0){
-  //     $(o.id + " > .bg-parallax").css("transform","translateY(" + move + "px)");
-  //   }
-  // })
-  // parallax.forEach(function(o){
-  //
-  //   var move = (scrollTop - o.offset) * 300 / winHeight;
-  //   //console.log(move, scrollTop, o.offset, winHeight);
-  //   if(-300 < move && move < 300){
-  //     $(o.id + " > .bg-parallax").css("transform","translateY(" + move + "px)");
-  //   }
-  // })
-  var length = parallax.length;
-  for (var i = 0; i < length; i++){
-    var move = (scrollTop - parallax[i].offset) * 300 / winHeight;
-    //console.log(move, scrollTop, o.offset, winHeight);
-    if(-300 < move && move < 300){
-      $("#sub-" + parallax[i].id).css("transform","translateY(" + move + "px)");
-    }
-  }
+  $(id).css('background-image',"url(" + imgUrl + ")")
 }
 
 //Google maps stuff

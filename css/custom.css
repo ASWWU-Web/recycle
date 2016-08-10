@@ -102,11 +102,9 @@ hr {
 .parallax-window {
   height: 400px;
   overflow: hidden;
-}
-.bg-parallax {
-  background-position: center;
   background-size: cover;
-  height:700px;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /*Our Team 'Person'*/
