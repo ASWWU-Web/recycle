@@ -1,5 +1,4 @@
 //Startup script.
-var isTop;
 var parallax = [];
 
 //Startup script
@@ -15,11 +14,9 @@ $(document).ready(function(){
   addParallax("#atlas-coffee","./media/atlas-coffee.jpg");
   //Attach this function to scroll event.
   $(window).scroll(function() {
-    if(!isTop && document.body.scrollTop < 10){
-      isTop = true;
+    if(document.body.scrollTop < 10){
       $('#navbar').addClass('bg-transparent').removeClass('bg-inverse');
     } else {
-      isTop = false;
       $('#navbar').addClass('bg-inverse').removeClass('bg-transparent');
     }
   });
