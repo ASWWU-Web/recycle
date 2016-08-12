@@ -31,6 +31,36 @@ $(document).ready(function(){
     isTop = false;
     $('#navbar').addClass('bg-inverse').removeClass('bg-transparent');
   }
+
+  var button = "<div class='col col-xs-12 text-white text-xs-center'><a href='https://www.instagram.com/the_atlas/' target='about_blank' class='btn btn-primary'>Open with Instagram</a></div>";
+  //Instagram feed stuff.
+  $.getJSON("https://aswwu.com/server/atlas", function(data){
+    var feed = ``;
+    var count = 6;
+    $.each(data.data, function(i,o){
+      if(count <= 0){
+        return false;
+      }
+      count--;
+      var html = `
+      <div class="col-md-6">
+        <div class="fh5co-press-item to-animate fadeInUp animated">
+					<a class="fh5co-press-img" href="` + o.link + `" style="background-image: url(` +  o.images.low_resolution.url+ `)">
+						</a>
+					<div class="fh5co-press-text">
+						<p>` + o.caption.text + `</p>
+					</div>
+          <a href="`+ o.link + `" target="about_blank"><div class="fh5co-like text-black"><font color="red"> &hearts;</font> ` + o.likes.count + `</div></a>
+				</div>
+      </div>
+          `;
+      feed += html;
+    })
+
+    $("#atlasFeed").append(feed + button);
+  }).fail(function(){
+    $("#atlasFeed").append("<div class='col col-xs-12 text-xs-center'><p><font color='red'>Failed to fetch instagram content.</font></p></div>" + button);
+  })
 });
 
 //PARALLAX STUFF
