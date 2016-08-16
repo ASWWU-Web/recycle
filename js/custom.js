@@ -13,6 +13,7 @@ $(document).ready(function(){
   addParallax("#coffee-table","./media/coffee-table.jpg");
   addParallax("#atlas-coffee","./media/atlas-coffee.jpg");
   //Attach this function to scroll event.
+  // TODO: use bootstrap .affix() to do this. http://getbootstrap.com/javascript/#affix
   $(window).scroll(function() {
     if(document.body.scrollTop < 10){
       $('#navbar').addClass('bg-transparent').removeClass('bg-inverse');
@@ -99,6 +100,7 @@ function initMap() {
     size: new google.maps.Size(128, 128),
     scaledSize: new google.maps.Size(40,40)
   };
+  // TODO: Infowindow doesn't show up in the center.
   var infowindow = new google.maps.InfoWindow({
     content: "<a href='https://www.google.com/maps/dir//46.049527,-118.3882132/' target='_blank'>Get Directions</a>"
   });
