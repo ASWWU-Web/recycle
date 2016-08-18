@@ -59,8 +59,14 @@ video#bgvid {
   height: inherit;
 }
 #atlasLogo {
+  height:50px;
+}
+#exCollapsingNavbar2 {
+  margin-top:10px;
+}
+#atlasMain {
   width: 100%;
-  max-width:400px;
+  max-width:800px;
   height: auto;
 }
 #navbar {
@@ -107,16 +113,9 @@ video#bgvid {
   background-color: transparent;
   /*text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.57);*/
 }
-.bg-coffee {
-  background-image:url(../media/coffee_beans.jpg);
-  background-size: cover;
-  background-position: center;
-}
-.bg-light-gray {
-  background-color: #f4f4f4;
-}
+
 section {
-  background-color: white;
+  background-color: #f4f4f4;
   padding-top: 20px;
   padding-bottom: 50px;
 }
@@ -202,7 +201,10 @@ hr {
     padding-bottom: 0;
     margin-bottom: 40px;
     height: 300px;
-    overflow: scroll;
+    overflow-y: scroll;
+}
+.fh5co-press-item .fh5co-press-text::-webkit-scrollbar {
+  display: none;
 }
 .fh5co-press-text {
   padding-bottom: 1.5em;

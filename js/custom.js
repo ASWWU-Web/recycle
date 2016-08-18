@@ -4,7 +4,7 @@ var parallax = [];
 //Startup script
 $(document).ready(function(){
   $(".smooth").smoothScroll({
-    offset:-54,
+    offset:-74,
     speed:"auto",
     autoCoefficient:2
   });
@@ -74,6 +74,7 @@ function initMap() {
     center: atlas,
     disableDefaultUI: true,
     scrollwheel:false,
+    zoomControl: true,
     styles: [
       {
         featureType: 'all',
@@ -102,7 +103,8 @@ function initMap() {
   };
   // TODO: Infowindow doesn't show up in the center.
   var infowindow = new google.maps.InfoWindow({
-    content: "<a href='https://www.google.com/maps/dir//46.049527,-118.3882132/' target='_blank'>Get Directions</a>"
+    content: "<a href='https://www.google.com/maps/dir//46.049527,-118.3882132/' target='_blank'>Get Directions</a>",
+    pixelOffset: new google.maps.Size(-44,0)
   });
   var marker = new google.maps.Marker({
     position: atlas,
