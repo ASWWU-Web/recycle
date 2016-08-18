@@ -170,17 +170,13 @@
       <div class="container">
          <h1 class="text-xs-center header">Social</h1>
          <hr />
-         <div id="atlasFeed" class="row">
-           <!-- TODO: Find a better way to get the instagram feed. -->
-
-         </div>
+         <div id="atlasFeed" class="row"></div>
       </div>
     </section>
 
     <div id="atlas-coffee" class="parallax-window"></div>
 
-    <!-- TODO: Make border radius 0 -->
-    <nav class="navbar  navbar-dark bg-inverse">
+    <nav class="navbar  navbar-dark bg-inverse" style="border-radius:0;">
       <div class="pull-xs-left text-white small">
         Coded with <font color="red">&hearts;</font> by the <a href="https://aswwu.com" target="_blank">ASWWU</a> web team.
       </div>
@@ -188,9 +184,10 @@
          <a href="#top" class="text-white smooth">Back to Top</a>
       </div>
     </nav>
-    <div style="position: fixed; bottom: -24px; width: 100%; background-color: red;">
+    <!-- TODO: Make safari not show bg-video when scrolling beyond end of page.  -->
+    <!-- <div style="position: fixed; bottom: -24px; width: 100%; background-color: red;">
       thingy
-    </div>
+    </div> -->
     <!-- Javascript stuff  -->
     <script src="./js/jquery.min.js"></script>
     <script src="./js/tether.min.js"></script>

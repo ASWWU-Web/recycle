@@ -101,7 +101,6 @@ function initMap() {
     size: new google.maps.Size(128, 128),
     scaledSize: new google.maps.Size(40,40)
   };
-  // TODO: Infowindow doesn't show up in the center.
   var infowindow = new google.maps.InfoWindow({
     content: "<a href='https://www.google.com/maps/dir//46.049527,-118.3882132/' target='_blank'>Get Directions</a>",
     pixelOffset: new google.maps.Size(-44,0)
