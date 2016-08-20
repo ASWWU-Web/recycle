@@ -61,8 +61,8 @@ video#bgvid {
 #atlasLogo {
   height:50px;
 }
-#exCollapsingNavbar2 {
-  margin-top:10px;
+.navbar-offset {
+  margin-top: 10px;
 }
 #atlasMain {
   width: 100%;

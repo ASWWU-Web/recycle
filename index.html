@@ -15,7 +15,7 @@
     <link rel="icon" href="./favicon.gif" type="image/x-icon">
     <style>
     @media screen and (max-width: 767px) {
-        body {
+        #bg {
              background-image: url(./media/videoScreenShot.jpg);
              background-color: black;
              background-repeat: no-repeat;
@@ -39,22 +39,22 @@
   <body>
     <nav id="navbar" class="navbar navbar-static-top navbar-dark bg-transparent navbar-fixed-top">
       <a class="navbar-brand bold smooth" href="#top"><img id="atlasLogo" src="./media/atlasLogo.png" /></a>
-      <button class="navbar-toggler hidden-sm-up pull-xs-right text-white" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler hidden-sm-up pull-xs-right text-white navbar-offset" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
       &#9776;
     </button>
-    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+    <div class="collapse navbar-toggleable-xs navbar-offset" id="links">
       <ul class="nav navbar-nav pull-xs-right">
         <li class="nav-item">
-          <a class="nav-link smooth" href="#aboutUs"> About Us</a>
+          <a class="nav-link smooth" href="#aboutUs" data-toggle="collapse" data-target="#links"> About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link smooth" href="#ourTeam">Our Team</a>
+          <a class="nav-link smooth" href="#ourTeam" data-toggle="collapse" data-target="#links">Our Team</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link smooth" href="#ourCoffee">Our Coffee</a>
+          <a class="nav-link smooth" href="#ourCoffee" data-toggle="collapse" data-target="#links">Our Coffee</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link smooth" href="#social">Social</a>
+          <a class="nav-link smooth" href="#social" data-toggle="collapse" data-target="#links">Social</a>
         </li>
       </ul>
     </div>
@@ -63,7 +63,7 @@
     <!-- Video and title/logo -->
     <div id="top" class="jumbotron bg-transparent fullheight">
       <div id='title' class="container text-xs-center text-white">
-        <div class="bg">
+        <div id='bg' class="bg">
           <video autoplay muted loop id="bgvid">
               <source src="./media/coffee-AppleTV2.mp4" type="video/mp4">
           </video>
