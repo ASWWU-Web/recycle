@@ -161,6 +161,10 @@ hr {
 }
 .person .name {
   font-size: 24px;
+  color: #373a3c;
+}
+.person a:hover{
+  text-decoration: none;
 }
 .person .position {
   text-transform: uppercase;

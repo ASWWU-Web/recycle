@@ -1,5 +1,6 @@
 //Startup script.
 var parallax = [];
+var baristas =[];
 
 //Startup script
 $(document).ready(function(){
@@ -59,6 +60,56 @@ $(document).ready(function(){
   }).fail(function(){
     $("#atlasFeed").append("<div class='col col-xs-12 text-xs-center'><p><font color='red'>Failed to fetch instagram content.</font></p></div>" + button);
   })
+
+  //Add baristas.
+  baristas = [
+    {"user":"jonathan.fitch","role":"Mangager"},
+    {"user":"austin.mock","role":"Assistant Manager"},
+    {"user":"austin.thomson"},
+    {"user":"brennan.hoenes"},
+    {"user":"joshua.huh"},
+    {"user":"lindsey.haffner"},
+    {"user":"nicholas.chebeleu"},
+    {"user":"nicolas.ribeiro"},
+    {"user":"nicolette.horning"},
+    {"user":"ryan.thorpe"},
+    {"user":"stephanie.smith2"},
+    {"user":"Sarah.Fandrich"}
+  ]
+
+  // TODO: Make this better. (There is a chance that the order is not preserved due to the asynchronous nature of ajax requrests). 
+  $.each(baristas,function(i,v){
+    if(v.role){
+      var role = v.role;
+    } else {
+      var role = "Barista";
+    }
+    $.get('https://aswwu.com/server/profile/1516/' + v.user, function(data) {
+      console.log("working on " , v.user, data);
+      if(data.error){
+        //$("#baristas").append('<div class="col col-xs-12" style="color:red;">Could not fetch users.</div>');
+        return false;
+      }
+      if(data.photo == "None"){
+        return false;
+      }
+      var html = `
+        <div class="person col col-md-4">
+         <a href="https://aswwu.com/#/profile/` + v.user + `" target="_blank">
+          <div class="img-container">
+            <img src="https://aswwu.com/media/img-sm/`+ data.photo + `" alt="`+ data.full_name + `">
+          </div>
+          <h3 class="name">`+ data.full_name + `</h3>
+          <div class="position">`+ role + `</div>
+        </a>
+      </div>
+      `;
+      $("#baristas").append(html);
+    }).fail(function(){
+      $("#baristas").append('<div class="col col-xs-12" style="color:red;">Could not fetch users.</div>');
+    })
+  })
+
 });
 
 //PARALLAX STUFF
