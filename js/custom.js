@@ -1,6 +1,5 @@
 //Startup script.
 var parallax = [];
-var baristas =[];
 
 //Startup script
 $(document).ready(function(){
@@ -35,12 +34,10 @@ $(document).ready(function(){
   //Instagram feed stuff.
   $.getJSON("https://aswwu.com/server/atlas", function(data){
     var feed = ``;
-    var count = 6;
     $.each(data.data, function(i,o){
-      if(count <= 0){
+      if(i >= 6){
         return false;
       }
-      count--;
       var html = `
       <div class="col-md-6">
         <div class="fh5co-press-item to-animate fadeInUp animated">
@@ -62,7 +59,7 @@ $(document).ready(function(){
   })
 
   //Add baristas.
-  baristas = [
+  var baristas = [
     {"user":"jonathan.fitch","role":"Mangager"},
     {"user":"austin.mock","role":"Assistant Manager"},
     {"user":"austin.thomson"},
@@ -77,36 +74,38 @@ $(document).ready(function(){
     {"user":"Sarah.Fandrich"}
   ]
 
-  // TODO: Make this better. (There is a chance that the order is not preserved due to the asynchronous nature of ajax requrests). 
   $.each(baristas,function(i,v){
     if(v.role){
       var role = v.role;
     } else {
       var role = "Barista";
     }
+    var outerHTML = `
+      <div class="person col col-md-4">
+      <a id="` + i + `profile" href="https://aswwu.com/#/profile/` + v.user + `" target="_blank"></a>
+      </div>`;
+    $("#baristas").append(outerHTML);
     $.get('https://aswwu.com/server/profile/1516/' + v.user, function(data) {
-      console.log("working on " , v.user, data);
       if(data.error){
-        //$("#baristas").append('<div class="col col-xs-12" style="color:red;">Could not fetch users.</div>');
+        $("#" + i + "profile").parent().remove();
         return false;
       }
       if(data.photo == "None"){
+        $("#" + i + "profile").parent().remove();
         return false;
       }
       var html = `
-        <div class="person col col-md-4">
-         <a href="https://aswwu.com/#/profile/` + v.user + `" target="_blank">
-          <div class="img-container">
-            <img src="https://aswwu.com/media/img-sm/`+ data.photo + `" alt="`+ data.full_name + `">
-          </div>
-          <h3 class="name">`+ data.full_name + `</h3>
-          <div class="position">`+ role + `</div>
-        </a>
-      </div>
+        <div class="img-container">
+          <img src="https://aswwu.com/media/img-sm/`+ data.photo + `" alt="`+ data.full_name + `">
+        </div>
+        <h3 class="name">`+ data.full_name + `</h3>
+        <div class="position">`+ role + `</div>
       `;
-      $("#baristas").append(html);
+      $("#" + i + "profile").append(html);
     }).fail(function(){
+      console.log("failed", v.user);
       $("#baristas").append('<div class="col col-xs-12" style="color:red;">Could not fetch users.</div>');
+      return false;
     })
   })
 
