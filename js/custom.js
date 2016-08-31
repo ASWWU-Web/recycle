@@ -33,7 +33,7 @@ $(document).ready(function(){
   var button = "<div class='col col-xs-12 text-white text-xs-center'><a href='https://www.instagram.com/the_atlas/' target='about_blank' class='btn btn-primary'>Open with Instagram</a></div>";
   //Instagram feed stuff.
   $.getJSON("https://aswwu.com/server/atlas", function(data){
-    var feed = ``;
+    var feed =``;
     $.each(data.data, function(i,o){
       if(i >= 6){
         return false;
@@ -51,12 +51,12 @@ $(document).ready(function(){
       </div>
           `;
       feed += html;
-    })
+    });
 
     $("#atlasFeed").append(feed + button);
   }).fail(function(){
     $("#atlasFeed").append("<div class='col col-xs-12 text-xs-center'><p><font color='red'>Failed to fetch instagram content.</font></p></div>" + button);
-  })
+  });
 
   //Add baristas.
   var baristas = [
@@ -72,13 +72,12 @@ $(document).ready(function(){
     {"user":"ryan.thorpe"},
     {"user":"stephanie.smith2"},
     {"user":"Sarah.Fandrich"}
-  ]
+  ];
 
   $.each(baristas,function(i,v){
+    var role = "Barista";
     if(v.role){
-      var role = v.role;
-    } else {
-      var role = "Barista";
+      role = v.role;
     }
     var outerHTML = `
       <div class="person col col-md-4">
@@ -106,14 +105,14 @@ $(document).ready(function(){
       console.log("failed", v.user);
       $("#baristas").append('<div class="col col-xs-12" style="color:red;">Could not fetch users.</div>');
       return false;
-    })
-  })
+    });
+  });
 
 });
 
 //PARALLAX STUFF
 function addParallax(id, imgUrl) {
-  $(id).css('background-image',"url(" + imgUrl + ")")
+  $(id).css('background-image',"url(" + imgUrl + ")");
 }
 
 //Google maps stuff
