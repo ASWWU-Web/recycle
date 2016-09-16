@@ -32,7 +32,7 @@ $(document).ready(function(){
 
   var button = "<div class='col col-xs-12 text-white text-xs-center'><a href='https://www.instagram.com/the_atlas/' target='about_blank' class='btn btn-primary'>Open with Instagram</a></div>";
   //Instagram feed stuff.
-  $.getJSON("https://aswwu.com/server/atlas", function(data){
+  $.getJSON("https://aswwu.com/server/feed?name=atlas", function(data){
     var feed =``;
     $.each(data.data, function(i,o){
       if(i >= 6){
