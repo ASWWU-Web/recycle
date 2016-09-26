@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,106 +14,157 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="./favicon.ico?v=4.0" type="image/x-icon">
     <style>
-    @media screen and (max-width: 767px) {
-        body {
-             background-image: url(./media/videoScreenShot.jpg);
-             background-color: black;
-             background-repeat: no-repeat;
-             background-position: center;
-             background-size: cover;
+        @media screen and (max-width: 767px) {
+            body {
+                background-image: url(./media/videoScreenShot.jpg);
+                background-color: black;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            #bgvid {
+                display: none;
+            }
+            /*allow map to collapse properly on mobile.*/
+            .full_height_parent {
+                display: block;
+            }
+            /*Nicely disable the parallax */
+            .parallax-window {
+                background-attachment: local;
+            }
         }
-        #bgvid {
-            display: none;
-        }
-        /*allow map to collapse properly on mobile.*/
-        .full_height_parent{
-          display: block;
-        }
-        /*Nicely disable the parallax */
-        .parallax-window {
-          background-attachment: local;
-        }
-    }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-static-top navbar-dark bg-transparent navbar-fixed-top">
-      <a class="navbar-brand bold smooth" href="#top"><img id="atlasLogo" src="./media/atlasLogo.png" /></a>
-      <button class="navbar-toggler hidden-sm-up pull-xs-right text-white navbar-offset" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand bold smooth" href="#top"><img id="atlasLogo" src="./media/atlasLogo.png" /></a>
+        <button class="navbar-toggler hidden-sm-up pull-xs-right text-white navbar-offset" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
       &#9776;
     </button>
-    <div class="collapse navbar-toggleable-xs navbar-offset" id="links">
-      <ul class="nav navbar-nav pull-xs-right hidden-sm-up">
-        <!-- collapse navbar  -->
-        <li class="nav-item">
-          <a class="nav-link smooth" href="#aboutUs" data-toggle="collapse" data-target="#links"> About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link smooth" href="#ourTeam" data-toggle="collapse" data-target="#links">Our Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link smooth" href="#ourCoffee" data-toggle="collapse" data-target="#links">Our Coffee</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link smooth" href="#social" data-toggle="collapse" data-target="#links">Social</a>
-        </li>
-      </ul>
-      <!-- Non collapse navbar  -->
-      <ul class="nav navbar-nav pull-xs-right hidden-xs-down">
-        <li class="nav-item">
-          <a class="nav-link smooth" href="#aboutUs"> About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link smooth" href="#ourTeam">Our Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link smooth" href="#ourCoffee">Our Coffee</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link smooth" href="#social">Social</a>
-        </li>
-      </ul>
-    </div>
+        <div class="collapse navbar-toggleable-xs navbar-offset" id="links">
+            <ul class="nav navbar-nav pull-xs-right hidden-sm-up">
+                <!-- collapse navbar  -->
+                <li class="nav-item">
+                    <a class="nav-link smooth" href="#aboutUs" data-toggle="collapse" data-target="#links"> About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link smooth" href="#ourTeam" data-toggle="collapse" data-target="#links">Our Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link smooth" href="#ourCoffee" data-toggle="collapse" data-target="#links">Our Coffee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link smooth" href="#social" data-toggle="collapse" data-target="#links">Social</a>
+                </li>
+            </ul>
+            <!-- Non collapse navbar  -->
+            <ul class="nav navbar-nav pull-xs-right hidden-xs-down">
+                <li class="nav-item">
+                    <a class="nav-link smooth" href="#aboutUs"> About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link smooth" href="#ourTeam">Our Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link smooth" href="#ourCoffee">Our Coffee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link smooth" href="#social">Social</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Video and title/logo -->
     <div id="top" class="jumbotron bg-transparent fullheight">
-      <div id='title' class="container text-xs-center text-white">
-        <div class="bg">
-          <video autoplay muted loop id="bgvid">
+        <div id='title' class="container text-xs-center text-white">
+            <div class="bg">
+                <video autoplay muted loop id="bgvid">
               <source src="./media/coffee-AppleTV2.mp4" type="video/mp4">
           </video>
-        </div>
-        <img id="atlasMain" src="media/atlasMain.png"/>
+            </div>
+            <img id="atlasMain" src="media/atlasMain.png" />
 
-      </div>
+        </div>
     </div>
 
     <!-- About US -->
     <section id="aboutUs">
-      <div class="container">
-        <!-- Example row of columns -->
-        <h1 class="text-xs-center header">About Us</h1>
-        <hr>
-        <div class="row flex-items-xs-middle full_height_parent">
-          <div class="col-md-6">
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp; Humbly serving you since 2011, The Atlas is a specialty coffee and tea house located at Walla Walla University and operated by its students. Our focus is crafting some of the highest quality coffee and tea beverages available in the Walla Walla Valley while maintaining a rustic, community based atmosphere. All are invited to read, chat, collaborate, or simply enjoy the space; perfect for a long haul study session or a quick drink with a friend. So whether you are a student or not, drop by, grab a drink, and relax! We think you’ll like it here.
-            </p>
-            <p>
-              <b>Hours:</b>
-              <br>
-              Sunday-Thursday: 7:00am-10:00pm<br />
-              Friday: 7:00am-5:00pm<br />
-              Saturday: Closed<br />
-              <small>The Atlas is not open during summer quarter or during interims.</small>
-            </p>
-          </div>
-          <div class="col-md-6 full_height">
-            <div id='map' class='full_height_child'></div>
-         </div>
-      </div> <!-- /container -->
+        <div class="container">
+            <!-- Example row of columns -->
+            <h1 class="text-xs-center header">About Us</h1>
+            <hr>
+            <div class="row flex-items-xs-middle full_height_parent">
+                <div class="col-md-6">
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp; Humbly serving you since 2011, The Atlas is a specialty coffee and tea house located at Walla Walla University and operated by its students. Our focus is crafting some of the highest quality coffee and tea beverages available
+                        in the Walla Walla Valley while maintaining a rustic, community based atmosphere. All are invited to read, chat, collaborate, or simply enjoy the space; perfect for a long haul study session or a quick drink with a friend. So whether
+                        you are a student or not, drop by, grab a drink, and relax! We think you’ll like it here.
+                    </p>
+                    <p>
+                        <b>Hours:</b>
+                        <br> Sunday-Thursday: 7:00am-10:00pm<br /> Friday: 7:00am-5:00pm<br /> Saturday: Closed<br />
+                        <small>The Atlas is not open during summer quarter or during interims.</small>
+                    </p>
+                </div>
+                <div class="col-md-6 full_height">
+                    <div id='map' class='full_height_child'></div>
+                </div>
+            </div>
+            <br />
+            <h1 class="text-xs-center header">Our Drinks</h1>
+            <hr>
+            <div class='row'>
+                <div class="col-md-3">
+                    <h1 class="menu-header text-uppercase">coffee</h1>
+                    <p>
+                      Latte
+                      <br> Cappuccino
+                      <br> Mocha
+                      <br> Toddy
+                      <br> Americano
+                      <br> Macchiato
+                      <br> Gibralter
+                      <br> Shakerato
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h1 class="menu-header text-uppercase">Herbal Blends</h1>
+                    <p>
+                      Mint
+                      <br> Valvet Dessert
+                      <br> Chamomile
+                      <br> Yerba Mate
+                      <br> Welcome
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h1 class="menu-header text-uppercase">Teas</h1>
+                    <p>
+                      White Peach
+                      <br> White Peony
+                      <br> Iron Goddess
+                      <br> Sencha Green
+                      <br> Earl Grey
+                      <br> Classic Black
+                      <br> White Goji Blossom
+                      <br> Wuyi
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h1 class="menu-header text-uppercase">Other Drinks</h1>
+                    <p>
+                      Chai Latte
+                      <br> Hot Chocolate
+                      <br> Lemonades
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
     </section>
 
     <div id="late" class="parallax-window">
@@ -120,52 +172,53 @@
 
     <!--OUR TEAM-->
     <section id="ourTeam">
-      <div class="container">
-         <h1 class="text-xs-center header">Our Team</h1>
-         <hr />
-         <div id='baristas' class="row">
+        <div class="container">
+            <h1 class="text-xs-center header">Our Team</h1>
+            <hr />
+            <div id='baristas' class="row">
 
-         </div>
-      </div>
+            </div>
+        </div>
     </section>
 
     <div id="spilled_coffee" class="parallax-window"></div>
 
     <!-- Our Coffee -->
     <section id="ourCoffee">
-      <div class="container">
-        <h1 class="text-xs-center header">Our Coffee</h1>
-        <hr />
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pBatO5_-h08" allowfullscreen></iframe>
+        <div class="container">
+            <h1 class="text-xs-center header">Our Coffee</h1>
+            <hr />
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pBatO5_-h08" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <div id="coffee-table" class="parallax-window"></div>
 
     <!--SOCIAL-->
     <section id="social">
-      <div class="container">
-         <h1 class="text-xs-center header">Social</h1>
-         <hr />
-         <div id="atlasFeed" class="row"></div>
-      </div>
+        <div class="container">
+            <h1 class="text-xs-center header">Social</h1>
+            <hr />
+            <div id="atlasFeed" class="row"></div>
+        </div>
     </section>
 
     <div id="atlas-coffee" class="parallax-window"></div>
 
     <nav class="navbar  navbar-dark bg-inverse" style="border-radius:0;">
-      <div class="pull-xs-left text-white small">
-        Brewed with <font color="red">&hearts;</font> by the <a href="https://aswwu.com" target="_blank">ASWWU</a> web team.
-      </div>
-      <div class="pull-xs-right small">
-         <a href="#top" class="text-white smooth">Back to Top</a>
-      </div>
+        <div class="pull-xs-left text-white small">
+            Brewed with
+            <font color="red">&hearts;</font> by the <a href="https://aswwu.com" target="_blank">ASWWU</a> web team.
+        </div>
+        <div class="pull-xs-right small">
+            <a href="#top" class="text-white smooth">Back to Top</a>
+        </div>
     </nav>
     <!-- TODO: Make safari not show bg-video when scrolling beyond end of page.  -->
     <!-- <div style="position: fixed; bottom: -24px; width: 100%; background-color: red;">
@@ -179,5 +232,6 @@
     <script src="./js/custom.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBahOC0C4N-7MOD_Qn8446o5QiXX6AmWhc&callback=initMap">
     </script>
-  </body>
+</body>
+
 </html>

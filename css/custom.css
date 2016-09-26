@@ -25,6 +25,10 @@ body {
   font-weight:300;
   font-size:50px;
 }
+.menu-header{
+  font-weight:300;
+  font-size:30px;
+}
 .btn {
     text-transform: uppercase;
     letter-spacing: 2px;
