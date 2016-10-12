@@ -84,7 +84,7 @@ $(document).ready(function(){
       <a id="` + i + `profile" href="https://aswwu.com/#/profile/` + v.user + `" target="_blank"></a>
       </div>`;
     $("#baristas").append(outerHTML);
-    $.get('https://aswwu.com/server/profile/1516/' + v.user, function(data) {
+    $.get('https://aswwu.com/server/profile/1617/' + v.user, function(data) {
       if(data.error){
         $("#" + i + "profile").parent().remove();
         return false;
@@ -107,6 +107,10 @@ $(document).ready(function(){
       return false;
     });
   });
+
+  $(window).resize(function() {
+    google.maps.event.trigger(map, "resize");
+  })
 
 });
 
