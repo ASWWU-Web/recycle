@@ -68,10 +68,10 @@ $(document).ready(function(){
     {"user":"lindsey.haffner"},
     {"user":"nicholas.chebeleu"},
     {"user":"nicolas.ribeiro"},
-    {"user":"nicolette.horning"},
+    {"user":"Nicolette.Horning"},
     {"user":"ryan.thorpe"},
-    {"user":"stephanie.smith2"},
-    {"user":"Sarah.Fandrich"}
+    {"user":"Stephanie.Smith2"},
+    {"user":"sarah.fandrich"}
   ];
 
   $.each(baristas,function(i,v){
