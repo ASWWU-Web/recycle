@@ -60,7 +60,7 @@ $(document).ready(function(){
 
   //Add baristas.
   var baristas = [
-    {"user":"jonathan.fitch","role":"Mangager"},
+    {"user":"jonathan.fitch","role":"Manager"},
     {"user":"austin.mock","role":"Assistant Manager"},
     {"user":"austin.thomson"},
     {"user":"brennan.hoenes"},
