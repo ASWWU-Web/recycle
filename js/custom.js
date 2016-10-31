@@ -59,20 +59,7 @@ $(document).ready(function(){
   });
 
   //Add baristas.
-  var baristas = [
-    {"user":"jonathan.fitch","role":"Manager"},
-    {"user":"austin.mock","role":"Assistant Manager"},
-    {"user":"austin.thomson"},
-    {"user":"brennan.hoenes"},
-    {"user":"joshua.huh"},
-    {"user":"lindsey.haffner"},
-    {"user":"nicholas.chebeleu"},
-    {"user":"nicolas.ribeiro"},
-    {"user":"Nicolette.Horning"},
-    {"user":"ryan.thorpe"},
-    {"user":"Stephanie.Smith2"},
-    {"user":"sarah.fandrich"}
-  ];
+  var baristas = [{"user":"jonathan.fitch","role":"Manager","full_name":"Jonathan Fitch","photo":"profiles/1617/01864-2024483.jpg"},{"user":"austin.mock","role":"Assistant Manager","full_name":"Austin Mock","photo":"profiles/1617/00975-2001055.jpg"},{"user":"austin.thomson","full_name":"Austin-Neil Thomson","photo":"profiles/1617/02490-2022518.jpg"},{"user":"brennan.hoenes","full_name":"Brennan Hoenes","photo":"profiles/1617/02100-1496419.jpg"},{"user":"joshua.huh","full_name":"Joshua Huh","photo":"profiles/1617/01018-1499491.jpg"},{"user":"lindsey.haffner","full_name":"Lindsey Haffner","photo":"profiles/1617/01861-2002773.jpg"},{"user":"nicholas.chebeleu","full_name":"Nicholas Chebeleu","photo":"profiles/1617/02525-2012265.jpg"},{"user":"nicolas.ribeiro","full_name":"Nicolas Ribeiro","photo":"profiles/1617/02571-2013572.jpg"},{"user":"Nicolette.Horning","full_name":"Nicolette Horning","photo":"profiles/1617/00430-2038764.jpg"},{"user":"ryan.thorpe","full_name":"Ryan Thorpe","photo":"profiles/1516/03618-1486927.jpg"},{"user":"sarah.fandrich","full_name":"Sarah Fandrich","photo":"profiles/1617/02528-1496247.jpg"}];
 
   $.each(baristas,function(i,v){
     var role = "Barista";
@@ -84,28 +71,18 @@ $(document).ready(function(){
       <a id="` + i + `profile" href="https://aswwu.com/#/profile/` + v.user + `" target="_blank"></a>
       </div>`;
     $("#baristas").append(outerHTML);
-    $.get('https://aswwu.com/server/profile/1617/' + v.user, function(data) {
-      if(data.error){
-        $("#" + i + "profile").parent().remove();
-        return false;
-      }
-      if(data.photo == "None"){
-        $("#" + i + "profile").parent().remove();
-        return false;
-      }
-      var html = `
-        <div class="img-container">
-          <img src="https://aswwu.com/media/img-sm/`+ data.photo + `" alt="`+ data.full_name + `">
-        </div>
-        <h3 class="name">`+ data.full_name + `</h3>
-        <div class="position">`+ role + `</div>
-      `;
-      $("#" + i + "profile").append(html);
-    }).fail(function(){
-      console.log("failed", v.user);
-      $("#baristas").append('<div class="col col-xs-12" style="color:red;">Could not fetch users.</div>');
+    if(v.photo == "None"){
+      $("#" + i + "profile").parent().remove();
       return false;
-    });
+    }
+    var html = `
+      <div class="img-container">
+        <img src="https://aswwu.com/media/img-sm/`+ v.photo + `" alt="`+ v.full_name + `">
+      </div>
+      <h3 class="name">`+ v.full_name + `</h3>
+      <div class="position">`+ role + `</div>
+    `;
+    $("#" + i + "profile").append(html);
   });
 
   $(window).resize(function() {
