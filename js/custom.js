@@ -8,10 +8,10 @@ $(document).ready(function(){
     speed:"auto",
     autoCoefficient:2
   });
-  addParallax("#late","./media/late.jpg");
-  addParallax("#spilled_coffee","./media/spilled_coffee.jpg");
-  addParallax("#coffee-table","./media/coffee-table.jpg");
-  addParallax("#atlas-coffee","./media/atlas-coffee.jpg");
+  addParallax("#late","./media/IMG_6201.jpg");
+  addParallax("#spilled_coffee","./media/Sept.%2017-2.jpg");
+  //addParallax("#coffee-table","./media/coffee-table.jpg");
+  addParallax("#atlas-coffee","./media/Sept.%2017-6.jpg");
   //Attach this function to scroll event.
   // TODO: use bootstrap .affix() to do this. http://getbootstrap.com/javascript/#affix
   $(window).scroll(function() {
