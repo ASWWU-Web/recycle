@@ -88,6 +88,15 @@ video#bgvid {
   margin-bottom: 0;
 }
 
+#hours {
+  margin-left: 10px;
+}
+#hours tr td:first-child {
+  font-weight: bold;
+  vertical-align: top;
+  padding-right: 10px;
+}
+
 /*Colors/theme (look and feel of the website)*/
 .btn-primary{
   background-color: #ae8648;
