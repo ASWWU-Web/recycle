@@ -1,4 +1,4 @@
-//Startup script.
+//Global vars.
 var parallax = [];
 
 //Startup script
@@ -15,14 +15,14 @@ $(document).ready(function(){
   //Attach this function to scroll event.
   // TODO: use bootstrap .affix() to do this. http://getbootstrap.com/javascript/#affix
   $(window).scroll(function() {
-    if(document.body.scrollTop < 10){
+    if(getScrollHeight() < 10){
       $('#navbar').addClass('bg-transparent').removeClass('bg-inverse');
     } else {
       $('#navbar').addClass('bg-inverse').removeClass('bg-transparent');
     }
   });
   //In case the page doesn't load on the Top.
-  if(document.body.scrollTop < 10){
+  if(getScrollHeight() < 10){
     isTop = true;
     $('#navbar').addClass('bg-transparent').removeClass('bg-inverse');
   } else {
@@ -59,7 +59,19 @@ $(document).ready(function(){
   });
 
   //Add baristas.
-  var baristas = [{"user":"jonathan.fitch","role":"Manager","full_name":"Jonathan Fitch","photo":"profiles/1617/01864-2024483.jpg"},{"user":"austin.mock","role":"Assistant Manager","full_name":"Austin Mock","photo":"profiles/1617/00975-2001055.jpg"},{"user":"austin.thomson","full_name":"Austin-Neil Thomson","photo":"profiles/1617/02490-2022518.jpg"},{"user":"brennan.hoenes","full_name":"Brennan Hoenes","photo":"profiles/1617/02100-1496419.jpg"},{"user":"joshua.huh","full_name":"Joshua Huh","photo":"profiles/1617/01018-1499491.jpg"},{"user":"lindsey.haffner","full_name":"Lindsey Haffner","photo":"profiles/1617/01861-2002773.jpg"},{"user":"nicholas.chebeleu","full_name":"Nicholas Chebeleu","photo":"profiles/1617/02525-2012265.jpg"},{"user":"nicolas.ribeiro","full_name":"Nicolas Ribeiro","photo":"profiles/1617/02571-2013572.jpg"},{"user":"Nicolette.Horning","full_name":"Nicolette Horning","photo":"profiles/1617/00430-2038764.jpg"},{"user":"ryan.thorpe","full_name":"Ryan Thorpe","photo":"profiles/1516/03618-1486927.jpg"},{"user":"sarah.fandrich","full_name":"Sarah Fandrich","photo":"profiles/1617/02528-1496247.jpg"}];
+  var baristas = [
+    {"role": "Manager", "username": "jonathan.fitch", "photo": "profiles/1617/01864-2024483.jpg", "email": "jonathan.fitch@wallawalla.edu", "full_name": "Jonathan Fitch", "views": "17"},
+    {"role": "Assistant Manager", "username": "austin.mock", "photo": "profiles/1718/02073-2001055.jpg", "email": "austin.mock@wallawalla.edu", "full_name": "Austin Mock", "views": "22"},
+    {"username": "brian.paredes", "photo": "profiles/1718/02419-2024509.jpg", "email": "Brian.paredes@wallawalla.edu", "full_name": "Brian Paredes", "views": "22"},
+    {"username": "sarah.fandrich", "photo": "profiles/1718/01817-1496247.jpg", "email": "", "full_name": "Sarah Fandrich", "views": "52"},
+    {"username": "annie.gibson", "photo": "profiles/1718/01410-2009372.jpg", "email": "guess", "full_name": "Annie Gibson", "views": "19"},
+    {"username": "Charmaine.Tan", "photo": "profiles/1718/00458-2049290.jpg", "email": "charmaine.tan@wallawalla.edu", "full_name": "Charmaine Tan", "views": "23"},
+    {"username": "joshua.huh", "photo": "profiles/1718/02890-1499491.jpg", "email": "joshua.huh@wallawalla.edu", "full_name": "Joshua Huh", "views": "2"},
+    {"username": "nicolas.ribeiro", "photo": "profiles/1718/02871-2013572.jpg", "email": "", "full_name": "Nick Ribeiro", "views": "41"},
+    {"username":"nicholas.chebeleu", "full_name":"Nicholas Chebeleu", "photo":"profiles/1617/02525-2012265.jpg"},
+    {"username": "Nicolette.Horning", "photo": "profiles/1718/02716-2038764.jpg", "email": "", "full_name": "Nicolette Horning", "views": "252"},
+    {"username": "samantha.blenderman", "photo": "profiles/1718/02943-2025087.jpg", "email": "", "full_name": "Samantha Blenderman", "views": "12"}
+  ];
 
   $.each(baristas,function(i,v){
     var role = "Barista";
@@ -68,7 +80,7 @@ $(document).ready(function(){
     }
     var outerHTML = `
       <div class="person col col-md-4">
-      <a id="` + i + `profile" href="https://aswwu.com/#/profile/` + v.user + `" target="_blank"></a>
+      <a id="` + i + `profile" href="https://aswwu.com/#/profile/` + v.username + `" target="_blank"></a>
       </div>`;
     $("#baristas").append(outerHTML);
     if(v.photo == "None"){
@@ -91,9 +103,23 @@ $(document).ready(function(){
 
 });
 
-//PARALLAX STUFF
+//GLOBAL FUNCTIONS
+
+//parallax handler
 function addParallax(id, imgUrl) {
   $(id).css('background-image',"url(" + imgUrl + ")");
+}
+
+//Returns any of the valid scroll variables or zero if there is an error.
+function getScrollHeight() {
+  var height = 0;
+  try {
+    height = window.pageYOffset || documentElement.scrollTop || body.scrollTop || 0
+  }
+  catch (e) {
+    height = 0;
+  }
+  return height;
 }
 
 //Google maps stuff
