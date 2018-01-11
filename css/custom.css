@@ -1,3 +1,7 @@
+:root {
+  --voiceBlue: rgb(48, 68, 112);
+}
+
 /*Quick Reset*/
 html, body {
     min-height: 100%;
@@ -100,9 +104,9 @@ video#bgvid {
 /*Colors/theme (look and feel of the website)*/
 .btn-primary{
   border-radius: 50px;
-  background-color: rgb(48, 68, 112);
-  border-color: rgb(48, 68, 112);
-  /* transition: all .2s; */
+  background-color: var(--voiceBlue);
+  border-color: var(--voiceBlue);
+  transition: all .2s;
 }
 /* .btn-primary:hover{
   background-color: #6F4E37;
@@ -138,7 +142,7 @@ section {
 }
 hr {
   width: 100px;
-  border-color: #ae8648;
+  border-color: var(--voiceBlue);
   border-width: 2px;
   margin-top:1.2em;
   margin-bottom:1.5em;
@@ -251,4 +255,10 @@ hr {
 }
 .full_height_child {
   align-items: stretch;
+}
+
+.center_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
