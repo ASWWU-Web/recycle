@@ -62,13 +62,13 @@ video#bgvid {
   align-items: center;
   height: inherit;
 }
-#atlasLogo {
+#voiceLogo {
   height:50px;
 }
 .navbar-offset {
   margin-top: 10px;
 }
-#atlasMain {
+#voiceMain {
   width: 100%;
   max-width:800px;
   height: auto;
@@ -99,11 +99,12 @@ video#bgvid {
 
 /*Colors/theme (look and feel of the website)*/
 .btn-primary{
-  background-color: #ae8648;
-  border-color: #ad8448;
-  transition: all .2s;
+  border-radius: 50px;
+  background-color: rgb(48, 68, 112);
+  border-color: rgb(48, 68, 112);
+  /* transition: all .2s; */
 }
-.btn-primary:hover{
+/* .btn-primary:hover{
   background-color: #6F4E37;
   border-color: #6F4E37;
 }
@@ -121,7 +122,7 @@ video#bgvid {
     color: #fff;
     background-color: #5c412d;
     border-color: #5c412d;
-}
+} */
 .bg-transparent {
   background-color: transparent;
   /*text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.57);*/
