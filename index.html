@@ -20,7 +20,7 @@
     <style>
         @media screen and (max-width: 767px) {
             body {
-                background-image: url(./media/videoScreenShot.jpg);
+                background-image: url(./media/the-voice-fallback.PNG);
                 background-color: black;
                 background-repeat: no-repeat;
                 background-position: center;
@@ -55,7 +55,10 @@
                     <a class="nav-link smooth" href="#about" data-toggle="collapse" data-target="#links"> About </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link smooth" href="#apply" data-toggle="collapse" data-target="#links"> Apply </a>
+                    <a class="nav-link smooth" href="#audition" data-toggle="collapse" data-target="#links"> Audition </a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link smooth" href="https://aswwu.com/thevoice/tickets" target="blank"><span class="fas fa-ticket-alt"></span>  Buy Tickets </a>
                 </li>
             </ul>
             <!-- Non collapse navbar  -->
@@ -64,7 +67,10 @@
                     <a class="nav-link smooth" href="#about"> About </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link smooth" href="#applytc"> Apply </a>
+                    <a class="nav-link smooth" href="#audition"> Audition </a>
+                </li>
+                <li class="nav-item">
+                    <a class="center_text" href="https://aswwu.com/thevoice/tickets" target="blank"><button type="button" class="btn nav-btn-tickets">Buy Tickets <span class="fas fa-ticket-alt"></span></button></a>
                 </li>
             </ul>
         </div>
@@ -75,11 +81,10 @@
         <div id='title' class="container text-xs-center text-white">
             <div class="bg">
                 <video autoplay muted loop id="bgvid">
-              <source src="http://aswwu.com/media/movies/thevoice.mp4" type="video/mp4">
-          </video>
+                    <source src="http://aswwu.com/media/movies/thevoice.mp4" type="video/mp4">
+                </video>
             </div>
             <img id="voiceMain" src="media/voiceMain.png" />
-
         </div>
     </div>
 
@@ -89,8 +94,26 @@
             <!-- Example row of columns -->
             <h1 class="text-xs-center header">About The Voice </h1>
             <hr>
-            <div class="row flex-items-xs-middle full_height_parent">
-                <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8 col-center-md-8">
+                    <!-- about the voice text -->
+                    <a class="center_text" href="https://aswwu.com/thevoice/tickets" target="blank"><button type="button" class="btn btn-primary">Buy Tickets <span class="fas fa-ticket-alt"></span></button></a>
+                </div>
+            </div>
+            <br />
+        </div>
+        <!-- /container -->
+    </section>
+
+    <div id="window2" class="parallax-window"></div>
+
+    <!-- Application Download -->
+    <section id="audition">
+        <div class="container">
+            <h1 class="text-xs-center header">Audition</h1>
+            <hr />
+            <div id='' class="row">
+                <div class="col-md-8 col-center-md-8">
                     <p>
                         Do you have what it takes to be the champion of The Voice of Walla Walla? On February 3, 2018, find out as twelve singers from WWU, Whitman, and WWCC compete for a grand prize of $100!
                     </p>
@@ -100,33 +123,13 @@
                     <p>
                         Please note that you need to bring your backing track, background singers, accompanists, or band to the auditions.  ASWWU will have a drum, but bring your snare and cymbals. For more questions, please email <a href="mailto:aswwu.social@wallawalla.edu">aswwu.social@wallawalla.edu</a>.
                     </p>
-                </div>
-            </div>
-            <br />
-        </div>
-        <!-- /container -->
-    </section>
-
-    <div id="late" class="parallax-window">
-    </div>
-
-    <!-- Application Download -->
-    <section id="apply">
-        <div class="container">
-            <h1 class="text-xs-center header">Apply</h1>
-            <hr />
-            <div id='' class="row">
-                <div class="col-md-12">
-                    <p class="center_text">
-                        Ready to apply? Click the link to download the PDF application.
-                    </p>
                     <a class="center_text" href="./media/The_Voice_of_Walla_Walla_Application_Form.pdf" download><button type="button" class="btn btn-primary">Application Download <span class="fas fa-cloud-download-alt"></span></button></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="spilled_coffee" class="parallax-window"></div>
+    <div id="window3" class="parallax-window"></div>
 
     <nav class="navbar  navbar-dark bg-inverse" style="border-radius:0;">
         <div class="pull-xs-left text-white small">

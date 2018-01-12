@@ -8,10 +8,8 @@ $(document).ready(function(){
     speed:"auto",
     autoCoefficient:2
   });
-  addParallax("#late","./media/IMG_6201.jpg");
-  addParallax("#spilled_coffee","./media/Sept.%2017-2.jpg");
-  //addParallax("#coffee-table","./media/coffee-table.jpg");
-  addParallax("#atlas-coffee","./media/Sept.%2017-6.jpg");
+  addParallax("#window2","./media/voiceCello.jpg");
+  addParallax("#window3","./media/voiceDrums.jpg");
   //Attach this function to scroll event.
   // TODO: use bootstrap .affix() to do this. http://getbootstrap.com/javascript/#affix
   $(window).scroll(function() {
@@ -29,49 +27,6 @@ $(document).ready(function(){
     isTop = false;
     $('#navbar').addClass('bg-inverse').removeClass('bg-transparent');
   }
-
-  var button = "<div class='col col-xs-12 text-white text-xs-center'><a href='https://www.instagram.com/the_atlas/' target='about_blank' class='btn btn-primary'>Open with Instagram</a></div>";
-  //Instagram feed stuff.
-  $.getJSON("https://aswwu.com/server/feed?name=atlas", function(data){
-    var feed =``;
-    $.each(data.data, function(i,o){
-      if(i >= 6){
-        return false;
-      }
-      var html = `
-      <div class="col-md-6">
-        <div class="fh5co-press-item to-animate fadeInUp animated">
-					<a class="fh5co-press-img" href="` + o.link + `" style="background-image: url(` +  o.images.low_resolution.url+ `)">
-						</a>
-					<div class="fh5co-press-text">
-						<p>` + o.caption.text + `</p>
-					</div>
-          <a href="`+ o.link + `" target="about_blank"><div class="fh5co-like text-black"><font color="red"> &hearts;</font> ` + o.likes.count + `</div></a>
-				</div>
-      </div>
-          `;
-      feed += html;
-    });
-
-    $("#atlasFeed").append(feed + button);
-  }).fail(function(){
-    $("#atlasFeed").append("<div class='col col-xs-12 text-xs-center'><p><font color='red'>Failed to fetch instagram content.</font></p></div>" + button);
-  });
-
-  //Add baristas.
-  var baristas = [
-    {"role": "Manager", "username": "jonathan.fitch", "photo": "profiles/1617/01864-2024483.jpg", "email": "jonathan.fitch@wallawalla.edu", "full_name": "Jonathan Fitch", "views": "17"},
-    {"role": "Assistant Manager", "username": "austin.mock", "photo": "profiles/1718/02073-2001055.jpg", "email": "austin.mock@wallawalla.edu", "full_name": "Austin Mock", "views": "22"},
-    {"username": "brian.paredes", "photo": "profiles/1718/02419-2024509.jpg", "email": "Brian.paredes@wallawalla.edu", "full_name": "Brian Paredes", "views": "22"},
-    {"username": "sarah.fandrich", "photo": "profiles/1718/01817-1496247.jpg", "email": "", "full_name": "Sarah Fandrich", "views": "52"},
-    {"username": "annie.gibson", "photo": "profiles/1718/01410-2009372.jpg", "email": "guess", "full_name": "Annie Gibson", "views": "19"},
-    {"username": "Charmaine.Tan", "photo": "profiles/1718/00458-2049290.jpg", "email": "charmaine.tan@wallawalla.edu", "full_name": "Charmaine Tan", "views": "23"},
-    {"username": "joshua.huh", "photo": "profiles/1718/02890-1499491.jpg", "email": "joshua.huh@wallawalla.edu", "full_name": "Joshua Huh", "views": "2"},
-    {"username": "nicolas.ribeiro", "photo": "profiles/1718/02871-2013572.jpg", "email": "", "full_name": "Nick Ribeiro", "views": "41"},
-    {"username":"nicholas.chebeleu", "full_name":"Nicholas Chebeleu", "photo":"profiles/1617/02525-2012265.jpg"},
-    {"username": "Nicolette.Horning", "photo": "profiles/1718/02716-2038764.jpg", "email": "", "full_name": "Nicolette Horning", "views": "252"},
-    {"username": "samantha.blenderman", "photo": "profiles/1718/02943-2025087.jpg", "email": "", "full_name": "Samantha Blenderman", "views": "12"}
-  ];
 
   $.each(baristas,function(i,v){
     var role = "Barista";
