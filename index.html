@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>The Voice of Walla Walla</title>
+    <title>Campus Recycling</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -19,24 +19,28 @@
 
     <style>
         @media screen and (max-width: 767px) {
-            body {
-                background-image: url(./media/the-voice-fallback.PNG);
-                background-color: black;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
-            }
-            #bgvid {
-                display: none;
+            /*Nicely disable the parallax */
+            .parallax-window {
+                background-attachment: local;
             }
             /*allow map to collapse properly on mobile.*/
             .full_height_parent {
                 display: block;
             }
-            /*Nicely disable the parallax */
-            .parallax-window {
-                background-attachment: local;
+            #title {
+                font-size: 50px;
             }
+        }
+        body {
+            background-image: url(./media/Recycling_copy.jpg);
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        #bgvid {
+            display: none;
         }
     </style>
 </head>
@@ -44,21 +48,21 @@
 <body>
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-static-top navbar-dark bg-transparent navbar-fixed-top">
-        <a class="navbar-brand bold smooth" href="#top"><img id="voiceLogo" src="./media/voiceLogo.png" /></a>
-        <button class="navbar-toggler hidden-sm-up pull-xs-right text-white navbar-offset" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- <a class="navbar-brand bold smooth" href="#top"><img id="voiceLogo" src="./media/voiceLogo.png" /></a> -->
+        <button class="navbar-toggler hidden-sm-up pull-xs-right text-white" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
       &#9776;
     </button>
-        <div class="collapse navbar-toggleable-xs navbar-offset" id="links">
+        <div class="collapse navbar-toggleable-xs" id="links">
             <ul class="nav navbar-nav pull-xs-right hidden-sm-up">
                 <!-- collapse navbar  -->
                 <li class="nav-item">
                     <a class="nav-link smooth" href="#about" data-toggle="collapse" data-target="#links"> About </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link smooth" href="#audition" data-toggle="collapse" data-target="#links"> Audition </a>
+                    <a class="nav-link smooth" href="#video" data-toggle="collapse" data-target="#links"> Watch the Video </a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link smooth" href="https://aswwu.com/thevoice/tickets" target="blank"><span class="fas fa-ticket-alt"></span>  Buy Tickets </a>
+                        <a class="nav-link smooth" href="https://wwuform.formstack.com/forms/aswwu_recycling" target="blank"><span class="fas fa-pencil-alt"></span>  Sign the petition </a>
                 </li>
             </ul>
             <!-- Non collapse navbar  -->
@@ -67,10 +71,10 @@
                     <a class="nav-link smooth" href="#about"> About </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link smooth" href="#audition"> Audition </a>
+                    <a class="nav-link smooth" href="#video"> Watch the Video </a>
                 </li>
                 <li class="nav-item">
-                    <a class="center_text" href="https://aswwu.com/thevoice/tickets" target="blank"><button type="button" class="btn nav-btn-tickets">Buy Tickets <span class="fas fa-ticket-alt"></span></button></a>
+                    <a class="center_text" href="https://wwuform.formstack.com/forms/aswwu_recycling" target="blank"><button type="button" class="btn nav-btn-tickets">Sign the petition <span class="fas fa-pencil-alt"></span></button></a>
                 </li>
             </ul>
         </div>
@@ -78,13 +82,14 @@
 
     <!-- Video and title/logo -->
     <div id="top" class="jumbotron bg-transparent fullheight">
-        <div id='title' class="container text-xs-center text-white">
+        <div id='title' class="container text-xs-center text-black text-uppercase">
             <div class="bg">
-                <video autoplay muted loop id="bgvid">
+                <!-- <video autoplay muted loop id="bgvid">
                     <source src="https://aswwu.com/media/movies/thevoice.mp4" type="video/mp4">
-                </video>
+                </video> -->
             </div>
-            <img id="voiceMain" src="media/voiceMain.png" />
+            <!-- <img id="voiceMain" src="media/voiceMain.png" /> -->
+            Recycling?
         </div>
     </div>
 
@@ -92,12 +97,12 @@
     <section id="about">
         <div class="container">
             <!-- Example row of columns -->
-            <h1 class="text-xs-center header">About The Voice </h1>
+            <h1 class="text-xs-center header">Recycling at WWU </h1>
             <hr>
             <div class="row">
                 <div class="col-md-8 col-center-md-8">
-                    <p>The first Voice of Walla Walla event is coming to Walla Walla University’s Village Hall Theater on <strong>February 3, 2018</strong>. This tri college event will feature the talents of Walla Walla University, Walla Walla Community College, and Whitman College. The winner of the cash prize will be determined by audience votes. Space is limited, so buy your tickets today to reserve your seat!</p>
-                    <a class="center_text" href="https://aswwu.com/thevoice/tickets" target="blank"><button type="button" class="btn btn-primary">Buy Tickets <span class="fas fa-ticket-alt"></span></button></a>
+                    <p>Currently Walla Walla University does not recycle any plastics, aluminum/tin or glass. If you would like to change this, support the cause by signing the petition. Your voice matters!</p>
+                    <a class="center_text" href="https://wwuform.formstack.com/forms/aswwu_recycling" target="blank"><button type="button" class="btn btn-primary">Sign the petition <span class="fas fa-pencil-alt"></span></button></a>
                 </div>
             </div>
             <br />
@@ -108,22 +113,15 @@
     <div id="window2" class="parallax-window"></div>
 
     <!-- Application Download -->
-    <section id="audition">
+    <section id="video">
         <div class="container">
-            <h1 class="text-xs-center header">Audition</h1>
+            <h1 class="text-xs-center header">Watch the Video</h1>
             <hr />
             <div id='' class="row">
                 <div class="col-md-8 col-center-md-8">
-                    <p>
-                        Do you have what it takes to be the champion of The Voice of Walla Walla? On February 3, 2018, find out as twelve singers from WWU, Whitman, and WWCC compete for a grand prize of $100!
-                    </p>
-                    <p>
-                        Auditions for The Voice are on January 22, so prepare your song, fill out the application, and come to audition at the Havstad Alumni Center on Monday, January 22 between 7 and 9 PM.  If you can't make it, you can also audition at Walla Walla Community College on January 23rd from 5 to 7 PM and at Whitman College on January 25th from 5 to 7 PM.
-                    </p>
-                    <p>
-                        Please note that you need to bring your backing track, background singers, accompanists, or band to the auditions.  ASWWU will have a drum, but bring your snare and cymbals. For more questions, please email <a href="mailto:aswwu.social@wallawalla.edu">aswwu.social@wallawalla.edu</a>.
-                    </p>
-                    <a class="center_text" href="./media/The_Voice_of_Walla_Walla_Application_Form.pdf" download><button type="button" class="btn btn-primary">Application Download <span class="fas fa-cloud-download-alt"></span></button></a>
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>

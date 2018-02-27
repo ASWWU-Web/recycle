@@ -4,12 +4,12 @@ var parallax = [];
 //Startup script
 $(document).ready(function(){
   $(".smooth").smoothScroll({
-    offset:-74,
+    offset:-52.88,
     speed:"auto",
     autoCoefficient:2
   });
-  addParallax("#window2","./media/voiceCello.jpg");
-  addParallax("#window3","./media/voiceDrums.jpg");
+  addParallax("#window2","./media/water_bottles.jpg");
+  addParallax("#window3","./media/bottles.png");
   //Attach this function to scroll event.
   // TODO: use bootstrap .affix() to do this. http://getbootstrap.com/javascript/#affix
   $(window).scroll(function() {

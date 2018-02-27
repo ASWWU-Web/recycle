@@ -1,5 +1,5 @@
 :root {
-  --voiceBlue: rgb(48, 68, 112);
+  --voiceBlue: rgb(0, 181, 167);
 }
 
 /*Quick Reset*/
@@ -69,6 +69,8 @@ video#bgvid {
   justify-content: center;
   align-items: center;
   height: inherit;
+  font-size: 120px;
+  /* font-family: 'Source Sans Pro', sans-serif; */
 }
 #voiceLogo {
   height:50px;
@@ -132,6 +134,11 @@ video#bgvid {
 .navbar-dark .navbar-nav .nav-link {
   color:white;
 }
+.bg-transparent .navbar-nav .nav-link, .bg-transparent button {
+  color: #373a3c;
+}
+
+
 
 section {
   background-color: #f4f4f4;
