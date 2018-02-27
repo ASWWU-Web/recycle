@@ -18,6 +18,17 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 
     <style>
+        body {
+            background-image: url(./media/Recycling_copy.jpg);
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        #bgvid {
+            display: none;
+        }
         @media screen and (max-width: 767px) {
             /*Nicely disable the parallax */
             .parallax-window {
@@ -30,17 +41,9 @@
             #title {
                 font-size: 50px;
             }
-        }
-        body {
-            background-image: url(./media/Recycling_copy.jpg);
-            background-color: black;
-            background-repeat: no-repeat;
-            background-position: bottom;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-        #bgvid {
-            display: none;
+            body {
+                background-attachment: scroll;
+            }
         }
     </style>
 </head>
@@ -87,9 +90,13 @@
                 <!-- <video autoplay muted loop id="bgvid">
                     <source src="https://aswwu.com/media/movies/thevoice.mp4" type="video/mp4">
                 </video> -->
+
             </div>
             <!-- <img id="voiceMain" src="media/voiceMain.png" /> -->
             Recycling?
+        </div>
+        <div>
+            <small>Photo credit: <a href="https://aswwu.com/#/profile/sophie.bailey" target="blank">Sophie Bailey</a></small>
         </div>
     </div>
 
@@ -100,7 +107,7 @@
             <h1 class="text-xs-center header">Recycling at WWU </h1>
             <hr>
             <div class="row">
-                <div class="col-md-8 col-center-md-8">
+                <div class="col-md-8 col-center-md-8 text-xs-center">
                     <p>Currently Walla Walla University does not recycle any plastics, aluminum/tin or glass. If you would like to change this, support the cause by signing the petition. Your voice matters!</p>
                     <a class="center_text" href="https://wwuform.formstack.com/forms/aswwu_recycling" target="blank"><button type="button" class="btn btn-primary">Sign the petition <span class="fas fa-pencil-alt"></span></button></a>
                 </div>
